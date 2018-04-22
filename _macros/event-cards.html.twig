@@ -12,27 +12,25 @@
                     </a>
 
                     <div class="card-body">
-                        <h4 class="card-title">
-                            {{- event.title -}}
+                        <div class="card-title">
+                            <div class="d-flex">
+                                <h4 class="mr-1">{{- event.title -}}</h4>
 
-                            {%- if event.url -%}
-                                <small>
-                                    <a class="no-underline mx-1" href="{{ event.url }}" title="Visit the website for {{ event.title }}">
+                                {%- if event.url -%}
+                                    <a class="no-underline mx-2" href="{{ event.url }}" title="Visit the website for {{ event.title }}">
                                         <span class="sr-only">Visit website</span>
                                         <i class="fa fa-link" aria-hidden="true"></i>
                                     </a>
-                                </small>
-                            {%- endif -%}
+                                {%- endif -%}
 
-                            {%- if event.flickr -%}
-                                <small>
-                                    <a class="no-underline mx-1" href="{{ event.flickr }}" title="View images of {{ event.title }}">
+                                {%- if event.flickr -%}
+                                    <a class="no-underline mx-2" href="{{ event.flickr }}" title="View images of {{ event.title }}">
                                         <span class="sr-only">View pictures of {{ event.title }}</span>
                                         <i class="fa fa-photo" aria-hidden="true"></i>
                                     </a>
-                                </small>
-                            {%- endif -%}
-                        </h4>
+                                {%- endif -%}
+                            </div>
+                        </div>
 
                         <p class="card-text">{{ event.desc }}</p>
                     </div>
