@@ -83,3 +83,10 @@ table tbody tr:nth-child(even) {
         font-size: 5rem;
     }
 }
+
+/* Utilities */
+
+.no-underline {
+    border-bottom: none;
+    text-decoration: none;
+}

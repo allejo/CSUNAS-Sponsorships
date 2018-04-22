@@ -3,10 +3,13 @@
         {% for event in events %}
             <section class="col-md-6 mb-4">
                 <div class="card h-100">
-                    {# Image size should be 625x250 #}
-                    {% if event.image %}
-                        <img class="card-img-top" src="{{ url(event.image) }}" alt="Students attending {{ event.title }}">
-                    {% endif %}
+                    {% set image_name = event.title | replace({ ' ': '_' }) %}
+                    {% set full = 'assets/images/events/' ~ image_name ~ '.jpg' %}
+                    {% set thumb = 'assets/images/events/' ~ image_name ~ '--thumbnail.jpg' %}
+
+                    <a href="{{ full }}" class="no-underline">
+                        <img class="card-img-top" src="{{ url(thumb) }}" alt="Students attending {{ event.title }}">
+                    </a>
 
                     <div class="card-body">
                         <h4 class="card-title">{{ event.title }}</h4>
