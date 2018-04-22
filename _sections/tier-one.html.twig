@@ -87,10 +87,10 @@
 ] %}
 
 <section>
-    <h3>Sponsoring Tier One Events</h3>
+    <h3 id="sponsoring-tier-one">Sponsoring Tier One Events</h3>
 
     <p>Tier One events are Signature Events within AS Productions. These annual events will include metrics data for attendance.</p>
 
-    {{ event_cards(events) }}
-    {{ comparison_table(perks, levels) }}
+    {{ event_cards(events, 'one') }}
+    {{ comparison_table(perks, levels, 'one') }}
 </section>

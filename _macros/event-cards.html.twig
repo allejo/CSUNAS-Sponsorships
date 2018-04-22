@@ -1,7 +1,7 @@
-{% macro event_cards(events) %}
-    <div class="row">
+{% macro event_cards(events, tier) %}
+    <div class="row mb-4">
         {% for event in events %}
-            <section class="col-md-6 mb-4">
+            <section class="col-lg-6 mb-4">
                 <div class="card h-100">
                     {% set image_name = event.title | replace({ ' ': '_' }) %}
                     {% set full = 'assets/images/events/' ~ image_name ~ '.jpg' %}
@@ -14,7 +14,7 @@
                     <div class="card-body">
                         <div class="card-title">
                             <div class="d-flex">
-                                <h4 class="mr-1">{{- event.title -}}</h4>
+                                <h4 id="event-tier-{{ tier }}-{{ event.title | lower | replace({ ' ' : '-' }) }}" class="mr-1">{{- event.title -}}</h4>
 
                                 {%- if event.url -%}
                                     <a class="no-underline mx-2" href="{{ event.url }}" title="Visit the website for {{ event.title }}">

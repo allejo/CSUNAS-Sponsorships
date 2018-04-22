@@ -75,10 +75,10 @@
 ] %}
 
 <section>
-    <h3>Sponsoring Tier Two Events</h3>
+    <h3 id="sponsoring-tier-two">Sponsoring Tier Two Events</h3>
 
     <p>These events are stand-alone events that happen during the spring semester. While specific metric data for attendance may not be available, these events have comparable events that can provide estimates on attendance.</p>
 
-    {{ event_cards(events) }}
-    {{ comparison_table(perks, levels) }}
+    {{ event_cards(events, 'two') }}
+    {{ comparison_table(perks, levels, 'two') }}
 </section>

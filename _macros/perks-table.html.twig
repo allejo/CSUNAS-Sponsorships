@@ -1,4 +1,4 @@
-{% macro comparison_table(perks, levels) %}
+{% macro comparison_table(perks, levels, tier) %}
     {% set names = [
         'White',
         'Silver',
@@ -7,42 +7,69 @@
         'Matador',
     ] %}
 
-    <h4>Contribution Perks</h4>
+    <section>
+        <h4 id="contribution-tier-{{ tier }}">Contribution Perks</h4>
 
-    <table class="w-100">
-        <caption class="py-3">
-            Included benefits to sponsoring events based on contributions. Depending on the needs of the event, either in-kind and monetary donations may be considered as acceptable forms of sponsorship.
-        </caption>
+        <div class="d-md-none">
+            <p>
+                Included benefits to sponsoring events based on contributions. Depending on the needs of the event, either in-kind and monetary donations may be considered as acceptable forms of sponsorship.
+            </p>
 
-        <thead>
-            <tr>
-                <th></th>
-
-                {% set money_levels = levels | keys %}
-                {% for i, name in names %}
-                    <th class="border-left px-3 text-center {{ loop.last ? 'border-right' : '' }}">
-                        {{ name }} <br>
-                        <span class="t-2">${{ money_levels[i] | number_format(0) }}</span>
-                    </th>
-                {% endfor %}
-            </tr>
-        </thead>
-
-        <tbody>
-            {% for key, perk in perks %}
-                <tr>
-                    <td scope="col" class="px-3">{{ perk }}</td>
-
-                    {% for level in levels %}
-                        <td class="border-left py-3 text-center {{ loop.last ? 'border-right': '' }}">
-                            {% if level[key] %}
-                                <span class="sr-only">Included</span>
-                                <i class="fa fa-check" aria-hidden="true"></i>
-                            {% endif %}
-                        </td>
-                    {% endfor %}
-                </tr>
+            {% for key, level in levels %}
+                <div class="card mb-3">
+                    <div class="card-header text-center">
+                        <strong>{{ names[loop.index0] }} &bull; ${{ key | number_format(0) }}</strong>
+                    </div>
+                    <div class="card-body">
+                        <ul class="mb-0">
+                            {% for perk, status in level %}
+                                {% if status %}
+                                    <li>{{ perks[perk] }}</li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
             {% endfor %}
-        </tbody>
-    </table>
+        </div>
+
+        <div class="d-none d-md-block">
+            <table class="w-100">
+                <caption class="py-3">
+                    Included benefits to sponsoring events based on contributions. Depending on the needs of the event, either in-kind and monetary donations may be considered as acceptable forms of sponsorship.
+                </caption>
+
+                <thead>
+                    <tr>
+                        <th></th>
+
+                        {% set money_levels = levels | keys %}
+                        {% for i, name in names %}
+                            <th class="border-left px-3 text-center {{ loop.last ? 'border-right' : '' }}" scope="col">
+                                {{ name }} <br>
+                                <span class="t-2">${{ money_levels[i] | number_format(0) }}</span>
+                            </th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for key, perk in perks %}
+                        <tr>
+                            <td scope="col" class="p-3">{{ perk }}</td>
+
+                            {% for level in levels %}
+                                <td class="border-left text-center {{ loop.last ? 'border-right': '' }}">
+                                    {% if level[key] %}
+                                        <span class="sr-only">Included</span>
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                    {% endif %}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
 {% endmacro %}
