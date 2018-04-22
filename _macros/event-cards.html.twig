@@ -12,7 +12,27 @@
                     </a>
 
                     <div class="card-body">
-                        <h4 class="card-title">{{ event.title }}</h4>
+                        <h4 class="card-title">
+                            {{- event.title -}}
+
+                            {%- if event.url -%}
+                                <small>
+                                    <a class="no-underline mx-1" href="{{ event.url }}" title="Visit the website for {{ event.title }}">
+                                        <span class="sr-only">Visit website</span>
+                                        <i class="fa fa-link" aria-hidden="true"></i>
+                                    </a>
+                                </small>
+                            {%- endif -%}
+
+                            {%- if event.flickr -%}
+                                <small>
+                                    <a class="no-underline mx-1" href="{{ event.flickr }}" title="View images of {{ event.title }}">
+                                        <span class="sr-only">View pictures of {{ event.title }}</span>
+                                        <i class="fa fa-photo" aria-hidden="true"></i>
+                                    </a>
+                                </small>
+                            {%- endif -%}
+                        </h4>
 
                         <p class="card-text">{{ event.desc }}</p>
                     </div>
