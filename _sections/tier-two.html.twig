@@ -1,0 +1,82 @@
+{% from '_macros/perks-table.html.twig' import comparison_table %}
+{% from '_macros/event-cards.html.twig' import event_cards %}
+
+{% set perks = {
+    'signage':              'Sponsorship level recognition on Event Signage',
+    'promo':                'Inclusion in all advertising and event promotional pieces*',
+    'group-social-media':   'Sponsor level group recognition on social media platforms (one time)',
+    'special-social-media': 'Individual Recognition on Social Media (two times)',
+    'tabling':              'Opportunity for a Promo Table at the event',
+    'booth':                'Sponsored Information Booth on campus (one time)',
+    'category-exclusive':   'Sponsor shall receive Category Exclusivity',
+} %}
+
+{% set levels = {
+    '100': {
+        'signage': true,
+        'promo': false,
+        'group-social-media': false,
+        'special-social-media': false,
+        'tabling': false,
+        'booth': false,
+        'category-exclusive': false,
+    },
+    '250': {
+        'signage': true,
+        'promo': true,
+        'group-social-media': false,
+        'special-social-media': false,
+        'tabling': false,
+        'booth': false,
+        'category-exclusive': false,
+    },
+    '500': {
+        'signage': true,
+        'promo': true,
+        'group-social-media': true,
+        'special-social-media': false,
+        'tabling': false,
+        'booth': false,
+        'category-exclusive': false,
+    },
+    '750': {
+        'signage': true,
+        'promo': true,
+        'group-social-media': true,
+        'special-social-media': true,
+        'tabling': true,
+        'booth': false,
+        'category-exclusive': false,
+    },
+    '1000': {
+        'signage': true,
+        'promo': true,
+        'group-social-media': true,
+        'special-social-media': true,
+        'tabling': true,
+        'booth': true,
+        'category-exclusive': true,
+    },
+} %}
+
+{% set events = [
+    {
+        'title': 'Earth Fair',
+        'desc': "Earth Fair is an event that educates students about global environmental issues. This event brings awareness of CSUN's sustainable initiatives to the students, highlighting campus efforts to use renewable energy, eliminate paper waste, and more. Earth Fair's programming includes a student art competition, live musical performances, and vendors that encourage students to take steps towards a sustainable lifestyle.",
+        'footer': '**Estimated Attendance:** ~ 3,000 throughout the day',
+    },
+    {
+        'title': 'Sol Fest',
+        'desc': '',
+        'footer': '',
+    },
+] %}
+
+<section class="container">
+    <h3>Sponsoring Tier Two Events</h3>
+
+    <p>These events are stand-alone events that happen during the spring semester. While specific metric data for attendance may not be available, these events have comparable events that can provide estimates on attendance.</p>
+
+    {{ event_cards(events) }}
+    {{ comparison_table(perks, levels) }}
+</section>

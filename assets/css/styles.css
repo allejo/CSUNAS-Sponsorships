@@ -1,0 +1,77 @@
+body {
+    background-color: #a90000;
+    color: #ffffff;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+a {
+    border-bottom: 1px solid currentColor;
+    color: #ffeb3b;
+}
+
+a:hover {
+    color: #ccba31;
+    text-decoration: none;
+}
+
+p {
+    line-height: 1.4;
+}
+
+strong {
+    font-weight: 600;
+}
+
+h1, h2, h3,
+h4, h5. h6 {
+    font-family: 'Josefin Slab', serif;
+    font-weight: 700;
+}
+
+/* Bootstrap Styling overrides */
+
+.card {
+    background-color: hsla(0, 0%, 100%, 0.1);
+}
+
+table caption {
+    color: hsla(0, 0%, 100%, 0.6);
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: hsla(0, 0%, 100%, 0.2);
+}
+
+table tbody tr:nth-child(even) {
+    background-color: hsla(0, 0%, 100%, 0.3);
+}
+
+/* Font Size modifiers */
+
+.t-1 {
+    font-size: 1.2rem;
+}
+
+.t-2 {
+    font-size: 1.75rem;
+}
+
+.t-3 {
+    font-size: 2.25rem;
+}
+
+.t-4 {
+    font-size: 3rem;
+}
+
+.t-5 {
+    font-size: 4rem;
+}
+
+@media (min-width: 768px) {
+    .t-5 {
+        font-size: 5rem;
+    }
+}

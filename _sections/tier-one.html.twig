@@ -1,0 +1,92 @@
+{% from '_macros/perks-table.html.twig' import comparison_table %}
+{% from '_macros/event-cards.html.twig' import event_cards %}
+
+{% set perks = {
+    'signage':              'Sponsorship level recognition on Event Signage',
+    'promo':                'Inclusion in all advertising and event promotional pieces*',
+    'group-social-media':   'Sponsor level group recognition on social media platforms (one time)',
+    'tabling':              'Opportunity for a Promo Table near the entrance of the event',
+    'special-social-media': 'Individual Recognition on Social Media (two times)',
+    'booth':                'Sponsored Information Booth on campus (one time)',
+    'category-exclusive':   'Sponsor shall receive Category Exclusivity',
+} %}
+
+{% set levels = {
+    '100': {
+        'signage': true,
+        'promo': false,
+        'group-social-media': false,
+        'tabling': false,
+        'special-social-media': false,
+        'booth': false,
+        'category-exclusive': false,
+    },
+    '250': {
+        'signage': true,
+        'promo': true,
+        'group-social-media': false,
+        'tabling': false,
+        'special-social-media': false,
+        'booth': false,
+        'category-exclusive': false,
+    },
+    '500': {
+        'signage': true,
+        'promo': true,
+        'group-social-media': true,
+        'tabling': true,
+        'special-social-media': false,
+        'booth': false,
+        'category-exclusive': false,
+    },
+    '1000': {
+        'signage': true,
+        'promo': true,
+        'group-social-media': true,
+        'tabling': true,
+        'special-social-media': true,
+        'booth': false,
+        'category-exclusive': false,
+    },
+    '5000': {
+        'signage': true,
+        'promo': true,
+        'group-social-media': true,
+        'tabling': true,
+        'special-social-media': true,
+        'booth': true,
+        'category-exclusive': true,
+    },
+} %}
+
+{% set events = [
+    {
+        'title': 'Big Show',
+        'desc': 'This event is CSUN’s annual fall concert, now in its 17th year it is a 8,000 student capacity party kicking off the fall semester. Past performers include Dillon Francis, Valentino Khan, Big Sean, Louis the Child, Carnage, Diplo, Phantoms, LMFAO, Tyga, Laidback Luke and more.',
+        'footer': '**Attendance:** 8,000 students & guests',
+    },
+    {
+        'title': 'Big Lecture',
+        'desc': 'In an effort to inspire and motivate the student body, AS Productions brings a highly accomplished inspirational guest speaker to the campus to speak to the campus and encourage them to chase their dreams. Bringing personalities from different industries, a few past guest speakers include: Laverne Cox, Viola Davis, Magic Johnson, James Franco, and Cornell West.',
+        'footer': '**Attendance:** 800 – 1600 students, faculty, staff, & guests',
+    },
+    {
+        'title': 'Big Comedy',
+        'desc': 'Big Comedy brings together an eclectic group of comedians to provide comedic relief to students during one of the most stressful times of the semester, finals. Past comedians include: Pablo Francisco, Iliza Shlesinger, Francisco Ramos, Finesse Mitchell, and Thomas Dale.',
+        'footer': '**Attendance:** 500 – 800 students, faculty, staff, & guests',
+    },
+    {
+        'title': 'Big Politics',
+        'desc': '',
+        'footer': '',
+    },
+] %}
+
+<section class="container">
+    <h3>Sponsoring Tier One Events</h3>
+
+    <p>Tier One events are Signature Events within AS Productions. These annual events will include metrics data for attendance.</p>
+
+    {{ event_cards(events) }}
+    {{ comparison_table(perks, levels) }}
+</section>

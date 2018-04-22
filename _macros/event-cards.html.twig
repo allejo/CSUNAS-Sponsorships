@@ -1,0 +1,22 @@
+{% macro event_cards(events) %}
+    <div class="row">
+        {% for event in events %}
+            <section class="col-md-6 mb-4">
+                <div class="card h-100">
+                    {% if event.image %}
+                        <img class="card-img-top" src="{{ url(image) }}" alt="Students attending {{ event.title }}">
+                    {% endif %}
+
+                    <div class="card-body">
+                        <h4 class="card-title">{{ event.title }}</h4>
+
+                        <p class="card-text">{{ event.desc }}</p>
+                    </div>
+                    <div class="card-footer">
+                        {{ event.footer | markdown | replace({ '<p': '<p class="m-0"' }) }}
+                    </div>
+                </div>
+            </section>
+        {% endfor %}
+    </div>
+{% endmacro %}

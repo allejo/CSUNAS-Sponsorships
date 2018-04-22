@@ -1,0 +1,88 @@
+{% from '_macros/perks-table.html.twig' import comparison_table %}
+{% from '_macros/event-cards.html.twig' import event_cards %}
+
+{% set perks = {
+    'signage':              'Sponsorship level recognition on Event Signage',
+    'promo':                'Inclusion in all advertising and event promotional pieces*',
+    'group-social-media':   'Sponsor level group recognition on social media platforms (one time)',
+    'tabling-2':            'Opportunity for a Promo Table at 2 weeks during the duration of the event',
+    'special-social-media': 'Individual Recognition on Social Media (two times)',
+    'tabling-5':            'Opportunity for a Promo Table at 5 weeks during the duration of the event',
+    'tabling-n':            'Opportunity for a Promo Table every week during the duration of the event',
+    'category-exclusive':   'Sponsor shall receive Category Exclusivity',
+} %}
+
+{% set levels = {
+    '100': {
+        'signage': true,
+        'promo': false,
+        'group-social-media': false,
+        'tabling-2': false,
+        'special-social-media': false,
+        'tabling-5': false,
+        'tabling-n': false,
+        'category-exclusive': false,
+    },
+    '250': {
+        'signage': true,
+        'promo': true,
+        'group-social-media': false,
+        'tabling-2': false,
+        'special-social-media': false,
+        'tabling-5': false,
+        'tabling-n': false,
+        'category-exclusive': false,
+    },
+    '500': {
+        'signage': true,
+        'promo': true,
+        'group-social-media': true,
+        'tabling-2': true,
+        'special-social-media': false,
+        'tabling-5': false,
+        'tabling-n': false,
+        'category-exclusive': false,
+    },
+    '750': {
+        'signage': true,
+        'promo': true,
+        'group-social-media': true,
+        'tabling-2': true,
+        'special-social-media': true,
+        'tabling-5': true,
+        'tabling-n': false,
+        'category-exclusive': false,
+    },
+    '1000': {
+        'signage': true,
+        'promo': true,
+        'group-social-media': true,
+        'tabling-2': true,
+        'special-social-media': true,
+        'tabling-5': true,
+        'tabling-n': true,
+        'category-exclusive': true,
+    },
+} %}
+
+{% set events = [
+    {
+        'title': "Farmer’s Market",
+        'desc': 'Farmers Market is a marketplace that brings fresh, locally sourced produce and goods to the campus. The goal of the market is to support sustainable agriculture and farming practices. AS is committed to offering healthy foods to students, staff, faculty, and surrounding community members.Each farmers Market has not only local live music but special events and games from on campus organizations. The market takes place every Tuesday during both fall and spring semesters.',
+        'footer': '**Estimated Attendance:**',
+    },
+    {
+        'title': 'Summer Movie Fest',
+        'desc': 'Established in 2011, Summer Movie Fest is an outdoor movie screening series held every Thursday during the summer and has grown to become a part of the Northridge culture. Each week AS Productions brings a popular movie, free activities, food trunks, and entertainment to the Oviatt Lawn for all to enjoy.',
+        'footer': '**Estimated Attendance:**',
+    },
+] %}
+
+<section class="container">
+    <h3>Sponsoring Tier Three Events</h3>
+
+    <p>These are a series of events that happen weekly throughout the course of a semester/summer. While specific metric data for attendance may not be available, these events have comparable</p>
+
+    {{ event_cards(events) }}
+    {{ comparison_table(perks, levels) }}
+</section>
