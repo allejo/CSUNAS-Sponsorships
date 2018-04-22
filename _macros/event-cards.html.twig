@@ -3,8 +3,9 @@
         {% for event in events %}
             <section class="col-md-6 mb-4">
                 <div class="card h-100">
+                    {# Image size should be 625x250 #}
                     {% if event.image %}
-                        <img class="card-img-top" src="{{ url(image) }}" alt="Students attending {{ event.title }}">
+                        <img class="card-img-top" src="{{ url(event.image) }}" alt="Students attending {{ event.title }}">
                     {% endif %}
 
                     <div class="card-body">

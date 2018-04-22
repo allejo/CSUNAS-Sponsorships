@@ -6,7 +6,12 @@
 {% block body %}
     {% include '_sections/introduction.html.twig' %}
     {% include '_sections/why-sponsor.html.twig' %}
-    {% include '_sections/tier-one.html.twig' %}
-    {% include '_sections/tier-two.html.twig' %}
-    {% include '_sections/tier-three.html.twig' %}
+
+    <section class="container">
+        <h2>Sponsorship Opportunities</h2>
+
+        {% include '_sections/tier-one.html.twig' %}
+        {% include '_sections/tier-two.html.twig' %}
+        {% include '_sections/tier-three.html.twig' %}
+    </section>
 {% endblock %}
