@@ -13,5 +13,42 @@
         ### How Will My Sponsorship Funds Be Utilized?
 
         Corporate sponsorship money will help AS Productions continue to bring the CSUN community quality high impact events while keeping the student cost at a minimum..
+
+        ### What type of events can be sponsored?
+
+        Our events can be categorized into three separate tiers depending on their size and frequency.
     {% endmarkdown %}
+
+    {% set tiers = [
+        {
+            'id': 'sponsoring-tier-one',
+            'title': 'Tier 1',
+            'desc': 'Signature events within AS Productions that occur annually',
+        },
+        {
+            'id': 'sponsoring-tier-two',
+            'title': 'Tier 2',
+            'desc': 'Stand-alone events that happen during the spring semester',
+        },
+        {
+            'id': 'sponsoring-tier-three',
+            'title': 'Tier 3',
+            'desc': 'Events that happen weekly throughout the course of a semester/summer',
+        },
+    ] %}
+
+    <div class="row text-center">
+        {% for tier in tiers %}
+            <div class="mb-4 col-sm-6 col-lg-4 {% if loop.first %}col-sm-12{% endif %}">
+                <a class="t-2" href="#{{ tier.id }}">
+                    <div class="card">
+                        <div class="card-body">
+                            <p><strong>{{ tier.title }}</strong></p>
+                            <p class="color-white t-0">{{ tier.desc }}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
 </section>
