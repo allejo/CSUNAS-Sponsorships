@@ -74,11 +74,17 @@
     },
 ] %}
 
-<section class="container">
-    <h3 id="sponsoring-tier-two">Sponsoring Tier Two Events</h3>
+<div class="page-section">
+    <img class="page-section__image"
+         src="{{ url('assets/images/heading--tier-two.jpg') }}"
+         alt="{{ department }}">
 
-    <p>These events are stand-alone events that happen during the spring semester. While specific metric data for attendance may not be available, these events have comparable events that can provide estimates on attendance.</p>
+    <section class="container py-5">
+        <h2 id="sponsoring-tier-two">Sponsoring Tier Two Events</h2>
 
-    {{ event_cards(events, 'two') }}
-    {{ comparison_table(perks, levels, 'two') }}
-</section>
+        <p>These events are stand-alone events that happen during the spring semester. While specific metric data for attendance may not be available, these events have comparable events that can provide estimates on attendance.</p>
+
+        {{ event_cards(events, 'two') }}
+        {{ comparison_table(perks, levels, 'two') }}
+    </section>
+</div>

@@ -86,11 +86,17 @@
     },
 ] %}
 
-<section class="container">
-    <h3 id="sponsoring-tier-one">Sponsoring Tier One Events</h3>
+<div class="page-section">
+    <img class="page-section__image"
+         src="{{ url('assets/images/heading--tier-one.jpg') }}"
+         alt="{{ department }}">
 
-    <p>Tier One events are Signature Events within AS Productions. These annual events will include metrics data for attendance.</p>
+    <section class="container py-5">
+        <h2 id="sponsoring-tier-one">Sponsoring Tier One Events</h2>
 
-    {{ event_cards(events, 'one') }}
-    {{ comparison_table(perks, levels, 'one') }}
-</section>
+        <p>Tier One events are Signature Events within AS Productions. These annual events will include metrics data for attendance.</p>
+
+        {{ event_cards(events, 'one') }}
+        {{ comparison_table(perks, levels, 'one') }}
+    </section>
+</div>

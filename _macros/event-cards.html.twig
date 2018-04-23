@@ -14,7 +14,7 @@
                     <div class="card-body">
                         <div class="card-title">
                             <div class="d-flex">
-                                <h4 id="event-tier-{{ tier }}-{{ event.title | lower | replace({ ' ' : '-' }) }}" class="mr-1">{{- event.title -}}</h4>
+                                <h3 id="event-tier-{{ tier }}-{{ event.title | lower | replace({ ' ' : '-' }) }}" class="mr-1">{{- event.title -}}</h3>
 
                                 {%- if event.url -%}
                                     <a class="no-underline mx-2" href="{{ event.url }}" title="Visit the website for {{ event.title }}">

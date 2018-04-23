@@ -82,11 +82,17 @@
     },
 ] %}
 
-<section class="container">
-    <h3 id="sponsoring-tier-three">Sponsoring Tier Three Events</h3>
+<div class="page-section">
+    <img class="page-section__image"
+         src="{{ url('assets/images/heading--tier-three.jpg') }}"
+         alt="{{ department }}">
 
-    <p>These are a series of events that happen weekly throughout the course of a semester/summer. While specific metric data for attendance may not be available, these events have comparable</p>
+    <section class="container py-5">
+        <h2 id="sponsoring-tier-three">Sponsoring Tier Three Events</h2>
 
-    {{ event_cards(events, 'three') }}
-    {{ comparison_table(perks, levels, 'three') }}
-</section>
+        <p>These are a series of events that happen weekly throughout the course of a semester/summer. While specific metric data for attendance may not be available, these events have comparable</p>
+
+        {{ event_cards(events, 'three') }}
+        {{ comparison_table(perks, levels, 'three') }}
+    </section>
+</div>

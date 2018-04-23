@@ -30,6 +30,28 @@ h4, h5, h6 {
     font-weight: 700;
 }
 
+.page-section {
+    overflow: hidden;
+}
+
+.page-section__image {
+    display: block;
+    margin-left: -50%;
+    width: 200%;
+}
+
+@media (min-width: 768px) {
+    .page-section__image {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+.page-footer {
+    border-top: rgba(255, 255, 255, 0.7) 1px dotted;
+}
+
+
 /* Bootstrap Styling overrides */
 
 h2, .h2 {
