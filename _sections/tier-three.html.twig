@@ -3,10 +3,10 @@
 
 {% set perks = {
     'signage':              'Sponsorship level recognition on Event Signage',
-    'promo':                'Inclusion in all advertising and event promotional pieces*',
-    'group-social-media':   'Sponsor level group recognition on social media platforms (one time)',
+    'promo':                'Inclusion in all advertising and event promotional pieces <sup>[ <a href="#tier_three_footnote_1">1</a> ]</sup>',
+    'group-social-media':   'Sponsor level group recognition on social media platforms <sup>[ <a href="#tier_three_footnote_2">2</a> ]</sup>',
     'tabling-2':            'Opportunity for a Promo Table at 2 weeks during the duration of the event',
-    'special-social-media': 'Individual Recognition on Social Media (two times)',
+    'special-social-media': 'Individual Recognition on Social Media <sup>[ <a href="#tier_three_footnote_2">2</a> ]</sup>',
     'tabling-5':            'Opportunity for a Promo Table at 5 weeks during the duration of the event',
     'tabling-n':            'Opportunity for a Promo Table every week during the duration of the event',
     'category-exclusive':   'Sponsor shall receive Category Exclusivity',
@@ -94,5 +94,13 @@
 
         {{ event_cards(events, 'three') }}
         {{ comparison_table(perks, levels, 'three') }}
+
+        <h4>Footnotes</h3>
+        <small>
+            <ol>
+                <li id="tier_three_footnote_1">Inclusion on advertising pieces will occur for any pieces that have not yet been printed or produced.</li>
+                <li id="tier_three_footnote_2">One/two post(s) at an agreed upon duration and date</li>
+            </ol>
+        </small>
     </section>
 </div>
