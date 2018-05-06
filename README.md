@@ -1,6 +1,6 @@
 # CSUN AS Sponsorships Page
 
-The website for [CSUN Associated Students Sponsorship information](https://csunas.org/sponsorship/) built with [stakx](https://stakx.io/).
+The website for [CSUN Associated Students Sponsorship information](http://csunas.org/sponsorship/) built with [stakx](https://stakx.io/).
 
 ## Building
 
