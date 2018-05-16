@@ -2,3 +2,6 @@ baseurl: /sponsorship/
 
 pageviews:
   - _pages
+
+exclude:
+  - README.md
